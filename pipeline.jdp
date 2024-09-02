@@ -1,0 +1,34 @@
+pipeline {
+    agent any 
+    stages {
+        stage('Pull') { 
+            steps {
+                git 'https://github.com/shubhamhmmm/project.git'
+            }
+        }
+        stage('Build') { 
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Test') { 
+            steps {
+                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar-cred') {
+                    echo 'Hello World'
+                }
+            }
+        }
+        stage('Quality-Gate') { 
+            steps {
+                timeout(10) {
+                    echo 'Hello World'
+                }
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
