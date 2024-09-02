@@ -13,9 +13,9 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar-cred') {
+                
                     echo 'Hello World'
-                }
+                
             }
         }
         stage('Quality-Gate') { 
