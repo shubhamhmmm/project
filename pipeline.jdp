@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Pull') { 
             steps {
-                git 'https://github.com/shubhamhmmm/project.git'
+                git 'https://github.com/scmgalaxy/helloworld-java-maven'
             }
         }
         stage('Build') { 
